@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import "./App.css";
+import React from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [albumList, setAlbumList] = useState([]);
+    useEffect(() => {
+        const fetchList = () => {
+            fetch(" https://jsonplaceholder.typicode.com/albums/")
+                .then((response) => response.json())
+                .then((data) => {
+                    setAlbumList(data);
+                });
+        };
+        fetchList([]);
+        // console.log("FetchList", fetchList);
+    }, []);
+
+    //   useEffect(() => {
+    //       const fetchDetails = () => {
+    //           fetch("https://jsonplaceholder.typicode.com/users/") 
+    //       };
+    //       fetchDetails();
+    //   }, [])
+
+    console.log("albumList", albumList);
+
+    return ( <
+        div >
+        <
+        h1 > Album List < /h1> <
+        h6 > Please Selece any list to get it 's details</h6>
+
+        <
+        div className = "App-AlbumList"
+        style = {
+            { textAlign: "left" } } >
+
+        {
+            albumList.map((userId) => ( <
+                li key = { userId.id }
+                style = {
+                    {
+                        margin: 5,
+                        padding: 5,
+                        border: "1px solid black",
+                        textDecoration: "none",
+                        listStyle: "none",
+                    }
+                } >
+                { userId.title } <
+                a style = {
+                    {
+                        color: "black",
+                    }
+                }
+                target = "_blank" >
+                href = { "https://jsonplaceholder.typicode.com/users/" + userId } <
+                /a>{" "} { < br / > } <
+                /li>
+            ))
+        } <
+        /div> <
+        /div>
+    );
 }
 
 export default App;
