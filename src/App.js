@@ -48,16 +48,17 @@ function App() {
                         listStyle: "none",
                     }
                 } >
-                { userId.title } <
+                <
                 a style = {
                     {
                         color: "black",
                     }
                 }
-                target = "_blank" >
-                if (albumList) href = { "https://jsonplaceholder.typicode.com/users/" + userId } <
-                    /a>{" "} { < br / > } <
-                    /li>
+                target = "_blank"
+                href = { "https://jsonplaceholder.typicode.com/users/" } >
+                { userId.title } <
+                /a> { < br / > } <
+                /li>
             ))
         } <
         /div> <
