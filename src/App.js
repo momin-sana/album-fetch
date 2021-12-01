@@ -55,9 +55,9 @@ function App() {
                     }
                 }
                 target = "_blank" >
-                href = { "https://jsonplaceholder.typicode.com/users/" + userId } <
-                /a>{" "} { < br / > } <
-                /li>
+                if (albumList) href = { "https://jsonplaceholder.typicode.com/users/" + userId } <
+                    /a>{" "} { < br / > } <
+                    /li>
             ))
         } <
         /div> <
