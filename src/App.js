@@ -12,7 +12,7 @@ function App() {
                     setAlbumList(data);
                 });
         };
-        fetchList([]);
+        fetchList();
         // console.log("FetchList", fetchList);
     }, []);
 
@@ -38,7 +38,7 @@ function App() {
 
         {
             albumList.map((userId) => ( <
-                li key = { userId.id }
+                div key = { albumList.userId }
                 style = {
                     {
                         margin: 5,
@@ -48,6 +48,9 @@ function App() {
                         listStyle: "none",
                     }
                 } >
+                { /*<div>{`Title: ${albumList[''].title}`}</div> ---- TypeError: Cannot read properties of undefined (reading 'title') */ } { /* below [0] first tilte is repeating */ } <
+                div > { `Title: ${albumList[0].title}` } < /div> <
+                div >
                 <
                 a style = {
                     {
@@ -55,10 +58,12 @@ function App() {
                     }
                 }
                 target = "_blank"
-                href = { "https://jsonplaceholder.typicode.com/users/" } >
+                href = { `https://jsonplaceholder.typicode.com/users/${userId.userId}` } >
+
                 { userId.title } <
                 /a> { < br / > } <
-                /li>
+                /div> <
+                /div>
             ))
         } <
         /div> <
