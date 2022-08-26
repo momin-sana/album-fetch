@@ -12,11 +12,11 @@ function App() {
         <
         Route path = "/"
         element = { < Home / > }
-        /> <
+        />{" "} <
         Route path = "/artist-details/:id"
         element = { < Artist / > }
-        /> <
-        /Routes> <
+        />{" "} <
+        /Routes>{" "} <
         /Router>
     );
 }
