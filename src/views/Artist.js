@@ -24,15 +24,16 @@ const Artist = () => {
                 textAlign: "center",
                 listStyle: "none",
             }
-        } > Album Fetch < /h1>
-
-        {
+        } >
+        { " " }
+        Album Fetch { " " } <
+        /h1> {
             artistDetails ? ( <
                 div > { JSON.stringify(artistDetails) } < /div>
             ) : ( <
                 div > Loading! < /div>
             )
-        } <
+        } { " " } <
         />
     );
 };
