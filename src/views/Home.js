@@ -27,11 +27,12 @@ const Home = () => {
                 listStyle: "none",
             }
         } >
-        Album List < /h1> <
-        h4 > Please Selece any list to get it 's details</h4> <
+        Album List { " " } <
+        /h1>{" "} <
+        h4 > Please Selece any list to get it 's details</h4>{" "} <
         div className = "App-AlbumList"
         style = {
-            { textAlign: "left" } } > {
+            { textAlign: "left" } } > { " " } {
             albumList.map((data) => ( <
                 div key = { data.id }
                 style = {
@@ -55,17 +56,18 @@ const Home = () => {
                         textDecoration: "none",
                         color: "black",
                         listStyle: "none",
-                        hoverBackgound: 'black',
+                        hoverBackgound: "black",
                     }
                 } >
-                { data.title } < /Link> <
+                { data.title } { " " } <
+                /Link>{" "} <
                 br / >
                 <
-                /div> <
+                /div>{" "} <
                 /div>
             ))
-        } <
-        /div> <
+        } { " " } <
+        /div>{" "} <
         /div>
     );
 };
